@@ -1,5 +1,4 @@
 
-
 console.log(x);
 
 function fun() {
