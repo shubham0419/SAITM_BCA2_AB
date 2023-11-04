@@ -32,3 +32,27 @@ let menu = ["Chhole Bhature", "Butter Chicken", "Rajma Chawal",
     "Onion Pizza", "Egg Curry", "Egg Omlet", "Garlic Naan", "Garlic Rice",
     "kadhai paneer", "Shahi Paneer", "Chai", "Momos", "Chicken Korma", "Dosa",
     "Uttapam", "Sambhar", "Vada Paav"];
+
+
+
+let veg = menu.filter(function (dish) {
+    if (dish.toLowerCase().indexOf("chicken") === -1 && dish.toLowerCase().indexOf("egg") === -1) {
+        return true;
+    } else {
+        return false;
+    }
+});
+
+
+let nonVeg = menu.filter(function (dish) {
+    if (dish.toLowerCase().indexOf("chicken") === -1 && dish.toLowerCase().indexOf("egg") === -1) {
+        return false;
+    } else {
+        return true;
+    }
+});
+
+console.log(veg);
+
+console.log(nonVeg);
+
