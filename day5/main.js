@@ -1,12 +1,9 @@
 
 // splice delete
 
-
-
 // arr.splice(2, 2);
 
 // console.log("after delete: ", arr);
-
 
 // splice add element
 

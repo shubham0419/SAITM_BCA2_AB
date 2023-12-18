@@ -42,19 +42,8 @@ function outer() {
 
 // constructor function
 
-function Person() {
-    this.name = "shubham";
-    this.age = 22;
-    console.log(this);
-    return {
-        name: this.name,
-        age: this.age
-    }
-}
 
-let p1 = Person();
 
-console.log(p1);
 
 
 
