@@ -20,3 +20,4 @@ let odd = a.filter((num) => {
 // let odd = a.filter((num) => num % 2)
 
 console.log(odd);
+let aa = a.reduce((accum, num) => accum + num,0)

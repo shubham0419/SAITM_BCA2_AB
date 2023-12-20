@@ -1,5 +1,6 @@
 // console.log(document);
 
+// ------------------------------------------ Selectors
 // var obj = {
 //     name:'shubham',
 //     role:'web trainer'
@@ -33,7 +34,7 @@ console.log(document.getElementById('head'));
 var insideDiv = document.querySelectorAll('#single p');  //single k andar waale paragraph
 console.log(insideDiv);
 
-// -------------------------------TEXT----------
+// -------------------------------------------TEXT----------
 
 // var para = document.getElementsByTagName('p')[0];
 
@@ -41,7 +42,7 @@ console.log(insideDiv);
 // console.log(para.textContent);
 // console.log(para.innerHTML);
 
-// ------------------Attribute
+// -----------------------------------------------Attribute & class
 
 var inp = document.querySelector('input[type="text"]');
 
@@ -66,7 +67,7 @@ var inp = document.querySelector('input[type="text"]');
 
 // inp.classList.toggle('blue');
 
-// --------------------------- Create Element
+// --------------------------------------- Create Element
 
 var createdH2 = document.createElement('h2');
 
