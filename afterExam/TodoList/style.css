@@ -1,0 +1,95 @@
+:root {
+    background-color: white;
+    --bg-color: #03045e;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.header {
+    width: 100vw;
+    background-color: var(--bg-color);
+    position: fixed;
+    z-index: 100;
+}
+
+#menu-icon {
+    font-size: 3.5rem;
+    display: none;
+}
+
+#filter {
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    align-self: center;
+    margin-left: 14px;
+    margin-bottom: 5px;
+}
+
+.light {
+    background-color: white;
+    --bg-color: #03045e;
+}
+
+.dark {
+    background-color: #001420;
+    --bg-color: #000;
+}
+
+.blue {
+    background-color: #0ef;
+    --bg-color: #00607a;
+}
+
+.red {
+    background-color: #660708;
+    --bg-color: #230000;
+}
+
+/* hero */
+.hero {
+    margin: 180px auto 80px;
+}
+
+.list-btn {
+    background-color: var(--bg-color);
+    color: white;
+}
+
+.temp-header {
+    height: 105px;
+}
+
+.side-bar {
+    margin-left: 3000px;
+}
+
+.temp-hero {
+    margin-top: 280px;
+}
+
+@media all and (max-width: 780px) {
+    #btn {
+        margin-top: 10px;
+        ;
+    }
+
+    #menu-icon {
+        display: inline;
+        position: fixed;
+        right: 7%
+    }
+}
