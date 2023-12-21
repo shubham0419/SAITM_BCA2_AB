@@ -9,17 +9,10 @@ body {
     flex-direction: column;
 }
 
-.display {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
-
 .header {
     width: 100vw;
     background-color: var(--bg-color);
+    /* CSS variable */
     position: fixed;
     z-index: 100;
 }
@@ -84,7 +77,6 @@ body {
 @media all and (max-width: 780px) {
     #btn {
         margin-top: 10px;
-        ;
     }
 
     #menu-icon {

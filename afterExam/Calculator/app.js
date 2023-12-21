@@ -2,6 +2,7 @@ var allTd = document.querySelectorAll('#container td');
 
 var screen = document.querySelector('#container input')
 
+// ADD Task
 for (let i = 0; i < allTd.length; i++) {
     allTd[i].addEventListener('click', (e) => {
         var text = e.target.innerText;
