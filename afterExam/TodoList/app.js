@@ -68,3 +68,23 @@ theme.addEventListener('click', (e) => {
     // Adding active Class in Li
     e.target.classList.add('active');
 })
+
+taskList.addEventListener('click', (e) => {
+    if (e.target.getAttribute('id') === 'update') {
+        var updateForm;
+        var input;
+        // putting input in form
+        updateForm.append(input);
+        // removing task from list 
+        e.target.parentElement.innerText = '';
+        // pushing forrm in list
+        e.target.parentElement.prepend(updateForm);
+
+        // event check on form
+        updateForm.addEventListener('submit', () => {
+            updateTask = e.target.children[0].value;
+            e.target.parentElement.innerText = updateTask;
+            e.target.children[0].remove();
+        })
+    }
+})
