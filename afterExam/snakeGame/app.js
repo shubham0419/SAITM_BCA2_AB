@@ -1,38 +1,5 @@
-const canvas = document.getElementById('canvas')
+const canvas = document.getElementById('canvas');
 const pen = canvas.getContext('2d');
-
-// pen.fillRect(x-cordinate,y-cordinate,width,height);
-// pen.fillRect(10, 10, 67, 67);
-// pen.fillStyle = 'yellow';
-
-// let startX;
-// let startY;
-// // initialse
-
-// function init() {
-//     startX = 10;
-//     startY = 10;
-//     pen.fillRect(startX, startY, 67, 67);
-// }
-// init();
-// // draw
-// function draw() {
-//     pen.fillRect(startX, startY, 67, 67);
-// }
-
-// // update
-// function update() {
-//     startX += 67;
-// }
-
-// // loop
-// function gameLoop() {
-//     pen.clearRect(0, 0, 1200, 750);
-//     update();
-//     draw();
-// }
-
-// setInterval(gameLoop, 200);
 
 const H = 750;
 const W = 1200;
@@ -41,6 +8,7 @@ const food = {
     x: null,
     y: null
 };
+
 let gameOver = false;
 let score = 0;
 
@@ -77,28 +45,32 @@ const snake = {
         } else {
             this.cells.shift();
         }
-        // --------Game over Check
-        if (headX > W || headX < 0) {
-            gameOver = true;
-        }
-        if (headY < 0 || headY > H) {
-            gameOver = true;
-        }
 
         if (this.direction === 'left') {
             newX = headX - 1;
             newY = headY;
+            if (newX * ss < 0) {
+                gameOver = true
+            }
         } else if (this.direction === 'up') {
             newX = headX;
             newY = headY - 1;
+            if (newY * ss < 0) {
+                gameOver = true;
+            }
         } else if (this.direction === 'down') {
             newX = headX;
             newY = headY + 1;
+            if (newY * ss > H) {
+                gameOver = true;
+            }
         } else {
             newX = headX + 1;
             newY = headY;
+            if (newX * ss > W) {
+                gameOver = true;
+            }
         }
-
         this.cells.push({ x: newX, y: newY });
 
     }
@@ -129,7 +101,6 @@ function init() {
     snake.createSnake();
     makeFood();
 }
-init();
 // draw
 
 function draw() {
@@ -138,9 +109,10 @@ function draw() {
         pen.fillStyle = 'red';
         pen.fillText('Game Over', 50, 100);
         clearInterval(id);
+        return;
     }
-    pen.clearRect(0, 0, W, H);
 
+    pen.clearRect(0, 0, W, H);
     pen.font = '40px sans-serif';
     pen.fillStyle = 'blue';
     pen.fillText(`Score: ${score}`, 50, 50);
@@ -163,4 +135,22 @@ function gameloop() {
     update();
 }
 
-const id = setInterval(gameloop, 200);
+
+// New Game
+
+let id;
+const btn = document.getElementsByTagName('button')[0];
+
+btn.addEventListener('click', () => {
+    // reset
+    pen.clearRect(0, 0, W, H);
+    snake.cells.length = 0;
+    score = 0;
+    gameOver = false;
+    snake.direction = 'right';
+    // new game start 
+
+    init();
+    id = setInterval(gameloop, 200);
+})
+
