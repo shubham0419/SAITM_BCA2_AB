@@ -34,6 +34,3 @@ form.addEventListener('submit', (e) => {
     let movieName = searchText.value;
     getMovies(movieName);
 })
-
-
-8376850331
